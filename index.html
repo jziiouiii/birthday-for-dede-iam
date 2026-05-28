@@ -1,0 +1,380 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sayang</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(to bottom,#1a0000,#3b0a0a,#000);
+overflow-x:hidden;
+color:white;
+}
+
+/* opening */
+
+.opening{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+}
+
+.envelope{
+width:220px;
+cursor:pointer;
+animation:float 2s ease-in-out infinite;
+transition:1s;
+}
+
+.tap{
+margin-top:20px;
+color:#ffd6d6;
+font-size:14px;
+letter-spacing:2px;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+/* content */
+
+.content{
+display:none;
+padding:40px 20px;
+animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.card{
+background:rgba(255,255,255,0.07);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:30px;
+padding:30px;
+max-width:400px;
+margin:auto;
+text-align:center;
+box-shadow:0 0 30px rgba(0,0,0,0.3);
+}
+
+h1{
+font-size:35px;
+color:#ffb3b3;
+margin-bottom:15px;
+}
+
+.date{
+color:#ffcccc;
+margin-bottom:20px;
+}
+
+.text{
+line-height:1.9;
+font-size:15px;
+color:#f5dede;
+}
+
+button{
+margin-top:25px;
+padding:12px 24px;
+border:none;
+border-radius:30px;
+background:#800000;
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* confetti */
+
+#love{
+display:none;
+margin-top:20px;
+font-size:20px;
+color:#ffb3b3;
+animation:fade 1s ease;
+}
+
+.confetti{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:fall linear forwards;
+z-index:999;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+/* gallery */
+
+.gallery{
+margin-top:60px;
+display:none;
+animation:fade 1s ease;
+}
+
+.gallery-title{
+text-align:center;
+font-size:32px;
+margin-bottom:30px;
+color:#ffcccc;
+}
+
+.photo{
+width:90%;
+max-width:350px;
+border-radius:25px;
+margin:20px auto;
+display:block;
+box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+.aesthetic-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+max-width:400px;
+margin:40px auto;
+}
+
+.box{
+background:rgba(255,255,255,0.06);
+padding:20px;
+border-radius:20px;
+text-align:center;
+font-size:14px;
+color:#ffe5e5;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.footer{
+margin-top:40px;
+text-align:center;
+color:#ffcccc;
+font-size:14px;
+padding-bottom:50px;
+}
+
+.cat{
+position:fixed;
+font-size:20px;
+animation:floatCat 6s linear infinite;
+opacity:0.7;
+}
+
+@keyframes floatCat{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+audio{
+display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- opening -->
+
+<div class="opening" id="opening">
+
+<img
+class="envelope"
+onclick="openLetter()"
+src="https://cdn-icons-png.flaticon.com/512/2099/2099199.png"
+/>
+
+<div class="tap">
+tap the envelope 💌
+</div>
+
+</div>
+
+<!-- content -->
+
+<div class="content" id="content">
+
+<div class="card">
+
+<h1>happy birthday sayang 💗</h1>
+
+<div class="date">
+4 juni 2004
+</div>
+
+<p class="text">
+semoga semua hal baik selalu dateng ke kamu dan semoga kita bisa terus bareng yang lamaa 🫶
+<br><br>
+makasih yaa udah selalu ada dan jadi rumah paling nyaman buat aku.
+</p>
+
+<button onclick="showLove()">
+pencet aku 🐱
+</button>
+
+<div id="love">
+love you sayang 🎉💗
+</div>
+
+<button onclick="showGallery()" id="nextBtn" style="display:none;">
+lihat all about dede iam ✨
+</button>
+
+</div>
+
+<!-- gallery -->
+
+<div class="gallery" id="gallery">
+
+<div class="gallery-title">
+all about dede iam 🖤
+</div>
+
+<!-- FOTO KALIAN -->
+<img class="photo" src="FOTO-KALIAN.jpg">
+
+<div class="aesthetic-grid">
+
+<div class="box">🐱 kucing</div>
+<div class="box">🎮 valorant</div>
+<div class="box">❄️ ganyu</div>
+<div class="box">🍛 nasi padang</div>
+<div class="box">🖤 hitam</div>
+<div class="box">🧥 jaket</div>
+<div class="box">🎴 pokemon</div>
+<div class="box">🍜 mie ayam</div>
+
+</div>
+
+<div class="footer">
+selalu jadi versi terbaik dirimu yaa sayang 💗
+</div>
+
+</div>
+
+</div>
+
+<audio autoplay loop>
+<source src="https://files.catbox.moe/8f93xk.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+function openLetter(){
+document.getElementById("opening").style.display="none";
+document.getElementById("content").style.display="block";
+}
+
+function showLove(){
+
+document.getElementById("love").style.display="block";
+
+document.getElementById("nextBtn").style.display="inline-block";
+
+for(let i=0;i<40;i++){
+
+let confetti=document.createElement("div");
+
+confetti.classList.add("confetti");
+
+confetti.innerHTML=["💗","✨","🐱","🎉"][Math.floor(Math.random()*4)];
+
+confetti.style.left=Math.random()*100+"vw";
+
+confetti.style.animationDuration=Math.random()*3+2+"s";
+
+document.body.appendChild(confetti);
+
+setTimeout(()=>{
+confetti.remove();
+},5000);
+
+}
+
+}
+
+function showGallery(){
+document.getElementById("gallery").style.display="block";
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+}
+
+function createCat(){
+
+let cat=document.createElement("div");
+
+cat.classList.add("cat");
+
+cat.innerHTML=["🐱","🖤","✨"][Math.floor(Math.random()*3)];
+
+cat.style.left=Math.random()*100+"vw";
+
+cat.style.fontSize=Math.random()*20+15+"px";
+
+document.body.appendChild(cat);
+
+setTimeout(()=>{
+cat.remove();
+},6000);
+
+}
+
+setInterval(createCat,800);
+
+</script>
+
+</body>
+</html>
+```
